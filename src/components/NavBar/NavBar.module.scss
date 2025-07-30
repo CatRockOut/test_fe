@@ -1,0 +1,90 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: rgba(10, 14, 20, .7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, .06);
+
+    .navbarInner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-block: 10px;
+        padding-inline: 16px;
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .burgerMenu {
+            display: none;
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 12px;
+            width: 44px;
+            height: 38px;
+            padding: 6px;
+            cursor: pointer;
+
+            &:focus {
+                outline: 2px solid var(--accent);
+            }
+
+            span {
+                display: block;
+                height: 2px;
+                margin: 6px 0;
+                background-color: var(--text);
+            }
+        }
+
+        .navLinks {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+
+            a {
+                color: var(--text);
+                text-decoration: none;
+                opacity: .9;
+                padding: 8px 10px;
+                border-radius: 10px;
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    background-color: rgba(255, 255, 255, .06);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        .navbarInner {
+            .burgerMenu {
+                display: block;
+            }
+
+            .navLinks {
+                position: absolute;
+                inset: 60px 16px auto 16px;
+                background-color: var(--panel);
+                border: 1px solid rgba(255, 255, 255, .08);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                padding: 10px;
+                display: none;
+                flex-direction: column;
+
+                &.open {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

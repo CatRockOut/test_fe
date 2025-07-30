@@ -1,0 +1,63 @@
+.card {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: var(--radius);
+    padding: 12px;
+    box-shadow: var(--shadow);
+
+    .cardInner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .userMeta {
+            display: flex;
+            flex-direction: column;
+
+            .userName {
+                font-size: 1.05rem;
+            }
+
+            .userEmail {
+                color: var(--muted);
+                font-size: .9rem;
+            }
+        }
+    }
+
+    .cardActions {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+}
+
+.btn {
+    background-color: var(--accent-2);
+    color: #000;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+        filter: brightness(1.05);
+        outline: none;
+    }
+
+    &.ghost {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, .2);
+    }
+}

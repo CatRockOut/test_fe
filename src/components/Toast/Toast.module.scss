@@ -1,0 +1,40 @@
+.toasts {
+    position: fixed;
+    right: 16px;
+    top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+
+    .toast {
+        max-width: min(420px, calc(100vw - 32px));
+        padding: 12px 40px 12px 12px;
+        border-radius: 12px;
+        background: #14202b;
+        color: var(--text);
+        border: 1px solid rgba(255, 255, 255, .12);
+        box-shadow: var(--shadow);
+        position: relative;
+
+        &.error {
+            border-color: rgba(255, 107, 107, .45);
+        }
+
+        .toastClose {
+            position: absolute;
+            right: 8px;
+            top: 6px;
+            border: none;
+            background: transparent;
+            color: var(--text);
+            font-size: 22px;
+            cursor: pointer;
+            line-height: 1;
+
+            &:focus {
+                outline: 2px solid var(--accent);
+            }
+        }
+    }
+}
